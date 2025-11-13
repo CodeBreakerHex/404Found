@@ -1,0 +1,5 @@
+{
+  "name": "Baysquare Technologies",
+  "description": "A responsive business landing page built with React and Tailwind CSS, replicating the Canvas theme design. It features multiple sections including services, pricing, testimonials, and a contact form.",
+  "requestFramePermissions": []
+}

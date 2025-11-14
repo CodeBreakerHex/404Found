@@ -6,6 +6,17 @@ import imageLogo from '../assets/images/BaysquareLogo.png'
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 10;
+            setIsScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navItems = useMemo(() => [
         { name: 'Home', href: '#home' },
@@ -63,7 +74,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="header">
+        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container header-container">
                 <div className="logo">
                     <a href="#home" onClick={handleLinkClick} aria-label="Baysquare Homepage">

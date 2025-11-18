@@ -23,6 +23,9 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Height of your header */
     height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -33,7 +36,9 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* Main container for scroll-snap */
@@ -120,6 +125,7 @@ section {
     left: 0;
     right: 0;
     width: 100%;
+    max-width: 100vw;
     height: 80px; /* Match this with the padding-top on sections */
     z-index: 1000;
     border-bottom: 1px solid transparent;
@@ -127,6 +133,7 @@ section {
     transform: translateZ(0);
     will-change: transform, background-color, border-color;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
 }
 
 /* Header when scrolled or not at top */
@@ -139,8 +146,11 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
 }
 .logo {
     display: flex;
